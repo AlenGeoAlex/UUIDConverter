@@ -10,7 +10,6 @@ import java.util.UUID;
 public class LuckData {
 
     private String oldUUID,newUUID;
-    private boolean changed;
     private Yaml playerLPData;
     private UUIDConverter plugin;
     private String name;
@@ -20,18 +19,10 @@ public class LuckData {
         this.playerLPData = file;
         this.oldUUID = (file.getString("uuid"));
         this.newUUID = null;
-        this.changed = false;
         this.name = file.getString("name");
         plugin.getLogger().info("Succesfully loaded data for user "+name+" with uuid "+oldUUID+".");
     }
 
-    public boolean isChanged() {
-        return changed;
-    }
-
-    public void setChanged(boolean changed) {
-        this.changed = changed;
-    }
 
     public void checkForUserData(){
         plugin.getServer().getScheduler().runTaskAsynchronously(plugin, new Runnable() {
