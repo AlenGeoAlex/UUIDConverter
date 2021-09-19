@@ -35,6 +35,7 @@ public final class UUIDConverter extends JavaPlugin {
                     Map.Entry<String,LuckData> currentData = iterator.next();
                     currentData.getValue().checkForUserData();
                 }
+                plugin.getLogger().info("Succesfully completed data checking on all cached results!");
             }
         },60);
     }

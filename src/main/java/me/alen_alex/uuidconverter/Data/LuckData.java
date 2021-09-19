@@ -46,6 +46,7 @@ public class LuckData {
                             plugin.getLogger().info("Username: "+name);
                             plugin.getLogger().info("Cracked UUID: "+oldUUID);
                             plugin.getLogger().info("Old File Name: "+playerLPData.getFile().getPath());
+                            plugin.getCache().set(oldUUID,"Already Registered As Premium");
                         }else{
                             newUUID = returnedUUID.replace("\"","");
                             playerLPData.set("uuid",newUUID);
@@ -61,6 +62,8 @@ public class LuckData {
                             plugin.getLogger().info("New File Name: "+newFile.getPath());
                         }
                     }
+                }else{
+                    plugin.getCache().set(oldUUID,"No data has been found for the user on Mojang");
                 }
             }
         });
