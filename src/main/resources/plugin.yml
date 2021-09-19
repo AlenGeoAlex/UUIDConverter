@@ -1,0 +1,4 @@
+name: UUIDConverter
+version: '${project.version}'
+main: me.alen_alex.uuidconverter.UUIDConverter
+authors: [ Alen_Alex ]
